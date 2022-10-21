@@ -12,6 +12,6 @@ Bisa juga pake petik 2
 Apaan
 """
 
-
+print('hello world')
 print('hello world')
 
