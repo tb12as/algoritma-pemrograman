@@ -1,0 +1,2 @@
+# integer
+print(12)
