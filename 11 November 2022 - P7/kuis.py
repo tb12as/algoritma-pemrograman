@@ -1,11 +1,29 @@
 print('KUIS MENGHITUNG NILAI MAHASISWA')
 
+def isValid(n):
+    try:
+        a = float(n)
+        if (a <= 100): 
+        	return True
+        else: 
+        	return True
+    except ValueError:
+        return False
+
+def validate(str):
+    try:
+        assert(isValid(str)), "Error : Input harus berupa angka dan kurang dari 100"
+        return float(str)
+    except Exception as e:
+        print(e)
+        exit()
+
 nama = input('Masukkan nama Anda	: ')
 nim = input('Masukkan NIM Anda	: ')
-quiz = float(input('Masukkan nilai Quiz 	: '))
-tugas = float(input('Masukkan nilai Tugas	: '))
-uts = float(input('Masukkan nilai UTS	: '))
-uas = float(input('Masukkan nilai UAS	: '))
+quiz = validate(input('Masukkan nilai Quiz 	: '))
+tugas = validate(input('Masukkan nilai Tugas	: '))
+uts = validate(input('Masukkan nilai UTS	: '))
+uas = validate(input('Masukkan nilai UAS	: '))
 
 print('\n============================================================')
 print('            **** KARTU HASIL STUDI MAHASISWA ****           ')
