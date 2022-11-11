@@ -3,7 +3,7 @@ print('KUIS MENGHITUNG NILAI MAHASISWA')
 def isValid(n):
     try:
         a = float(n)
-        if (a > 0 and a <= 100): 
+        if (a >= 0 and a <= 100): 
         	return True
         else: 
         	return False
@@ -12,7 +12,7 @@ def isValid(n):
 
 def validate(str):
     try:
-        assert(isValid(str)), "Error : Input harus berupa angka dan kurang dari 100"
+        assert(isValid(str)), "Error : Input harus berupa angka antara 0 - 100"
         return float(str)
     except Exception as e:
         print(e)
