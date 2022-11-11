@@ -49,6 +49,6 @@ print('Kelulusan 		: ', lulus)
 
 print('\n============================================================')
 print('     **** Program Studi D3 Teknik Informatika ****       ')
-print('      Jurusan Teknik Elektri Politeknik Negeri Pontianak     ')
+print('      Jurusan Teknik Elektro Politeknik Negeri Pontianak     ')
 print('============================================================')
 
