@@ -3,10 +3,10 @@ print('KUIS MENGHITUNG NILAI MAHASISWA')
 def isValid(n):
     try:
         a = float(n)
-        if (a <= 100): 
+        if (a > 0 and a <= 100): 
         	return True
         else: 
-        	return True
+        	return False
     except ValueError:
         return False
 
