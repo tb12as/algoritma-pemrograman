@@ -25,15 +25,15 @@ print('Nilai UAS 		: ', uas)
 print('------------------------------------------------------------')
 nilai_akhir = (quiz * 10/100) + (tugas * 20/100) + (uts * 30/100) + (uas * 40 / 100)
 # 80,51-100 = A, 65,51-80,50 = B, 50,51-65,50 = C, 40,41-50,50 = D, 0,00 - 34,40 = E
-if (nilai_akhir >= 80.51 and nilai_akhir <= 100):
+if (nilai_akhir >= 80.51 and nilai_akhir <= 100) :
 	nilai_huruf = 'A'
-elif (nilai_akhir >= 65.51 and nilai_akhir <= 80.50):
+elif (nilai_akhir >= 65.51 and nilai_akhir <= 80.50) :
 	nilai_huruf = 'B'
-elif (nilai_akhir >= 50.51 and nilai_akhir <= 65.50):
+elif (nilai_akhir >= 50.51 and nilai_akhir <= 65.50) :
 	nilai_huruf = 'C'
-elif (nilai_akhir >= 40.51 and nilai_akhir <= 55.50):
+elif (nilai_akhir >= 40.51 and nilai_akhir <= 55.50) :
 	nilai_huruf = 'D'
-elif (nilai_akhir >= 0 and nilai_akhir <= 34.40):
+elif (nilai_akhir >= 0 and nilai_akhir <= 40.50):
 	nilai_huruf = 'E'
 else :
 	nilai_huruf = 'Ups? Something is wrong'
