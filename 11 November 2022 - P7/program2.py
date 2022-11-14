@@ -49,6 +49,15 @@ def balok():
     luas_permukaan = 2 * ((p * l) + (l * t) + (p * t))
     return {'volume': volume, 'luas_permukaan': luas_permukaan}
 
+def kerucut():
+    r = floatOrExit(input('Masukkan panjang jari-jari alas : '))
+    t = floatOrExit(input('Masukkan tinggi kerucut : '))
+
+    v = 3.14 * r * r * t;
+    luas_permukaan = 3.14 * r * (r + math.sqrt(r * r + t * t))
+    luas_selimut = 3.14 * r * math.sqrt(r * r + t * t)
+    return {'volume': v, 'luas_permukaan': luas_permukaan, 'luas_selimut': luas_selimut}
+
 def start(firstTry):
     while True:
         if (firstTry == False):
@@ -79,8 +88,9 @@ def start(firstTry):
                 result = limas()
             elif selected == 'Balok':
                 result = balok()
-            elif selected == 'Belah ketupat':
-                result = belahKetupat()
+            elif selected == 'Kerucut':
+                result = kerucut()
+                # print(result)
             elif selected == 'Trapesium':
                 result = trapesium()
             elif selected == 'Layang-layang':
