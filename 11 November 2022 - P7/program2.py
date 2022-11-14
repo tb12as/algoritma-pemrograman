@@ -1,4 +1,12 @@
-import math
+# https://youtu.be/o4XveLyI6YU
+# https://stackoverflow.com/questions/394809/does-python-have-a-ternary-conditional-operator
+# https://stackoverflow.com/questions/8347048/how-to-convert-string-to-title-case-in-python
+# https://docs.python.org/3/library/stdtypes.html#str.replace
+# https://www.geeksforgeeks.org/how-to-capitalize-first-character-of-string-in-python/
+# https://www.adamsmith.haus/python/answers/how-to-call-a-function-by-its-name-as-a-string-in-python
+# https://stackoverflow.com/questions/5904969/how-to-print-a-dictionarys-key
+
+from math import sqrt
 options = [
     'Kubus',
     'Limas Segiempat',
@@ -12,7 +20,6 @@ def isFloat(n):
     try:
         float(n)
         return True
-
     except ValueError:
         return False
 
@@ -24,44 +31,66 @@ def floatOrExit(str):
         print(e)
         exit()
 
-def kubus():
-    sisi = floatOrExit(input('Masukkan panjang rusuk kubus : '))
-    return {
-        'volume' : sisi ** 3,
-        'luas_permukaan': (sisi ** 2) * 6
-    }
+def fixCase(str):
+    tmp = str.replace('_', ' ');
+    return tmp[0].upper() + tmp[1:]
 
-def limas():
-    sisi = floatOrExit(input('Masukkan panjang sisi limas : '))
+def execute(fn):
+    try:
+        fname = fn.title().replace(' ', '')
+        fname = fname[0].lower() + fname[1:]
+        return eval(fname + '()')
+    except Exception as e:
+        # undefined function
+        return None
+
+def kubus():
+    sisi = floatOrExit(input('\nMasukkan panjang rusuk kubus : '))
+    return {'volume' : sisi ** 3, 'luas_permukaan': (sisi ** 2) * 6}
+
+def limasSegiempat():
+    sisi = floatOrExit(input('\nMasukkan panjang sisi limas : '))
     t = floatOrExit(input('Masukkan tinggi limas : '))
     volume = 1/3 * sisi * sisi * t;
-    luas_segi_3 = (sisi * math.sqrt(((sisi / 2)**2) + (t ** 2))) / 2
+    luas_segi_3 = (sisi * sqrt(((sisi / 2)**2) + (t ** 2))) / 2
     luas_permukaan = (sisi ** 2) + (4 * luas_segi_3)
 
     return {'volume': volume, 'luas_permukaan': luas_permukaan}
 
 def balok():
-    p = floatOrExit(input('Masukkan panjang balok : '));
+    p = floatOrExit(input('\nMasukkan panjang balok : '));
     l = floatOrExit(input('Masukkan lebar balok : '));
     t = floatOrExit(input('Masukkan tinggi balok : '));
-
     volume = p * l * t;
     luas_permukaan = 2 * ((p * l) + (l * t) + (p * t))
     return {'volume': volume, 'luas_permukaan': luas_permukaan}
 
 def kerucut():
-    r = floatOrExit(input('Masukkan panjang jari-jari alas : '))
+    r = floatOrExit(input('\nMasukkan panjang jari-jari alas kerucut: '))
     t = floatOrExit(input('Masukkan tinggi kerucut : '))
-
     v = 3.14 * r * r * t;
-    luas_permukaan = 3.14 * r * (r + math.sqrt(r * r + t * t))
-    luas_selimut = 3.14 * r * math.sqrt(r * r + t * t)
+    luas_permukaan = 3.14 * r * (r + sqrt(r * r + t * t))
+    luas_selimut = 3.14 * r * sqrt(r * r + t * t)
     return {'volume': v, 'luas_permukaan': luas_permukaan, 'luas_selimut': luas_selimut}
+
+def bola():
+    r = floatOrExit(input('\nMasukkan panjang jari-jari bola : '))
+    v = 4 / 3 * 3.14 * r ** 3
+    l = 4 * 3.14 * r ** 2
+    return {'volume' : v, 'luas_permukaan' : l}
+
+def tabung():
+    r = floatOrExit(input('\nMasukkan panjang jari-jari tabung : '))
+    t = floatOrExit(input('Masukkan tinggi tabung : '))
+    v = 3.14 * r * r * t;
+    l = 2 * 3.14 * r * (r + t)
+    l_selimut = 2 * 3.14 * r * t
+    return {'volume': v, 'luas_permukaan': l, 'luas_selimut': l_selimut}
 
 def start(firstTry):
     while True:
         if (firstTry == False):
-            repeat = input('\nApakah anda ingin menghitung bangun datar yang lain? ? [ya, tidak] ')
+            repeat = input('\nApakah anda ingin menghitung bangun ruang yang lain? ? [ya, tidak] ')
             if repeat.lower() in ('ya', 'tidak'):
                 if (repeat.lower() == 'tidak'): break
             else:
@@ -69,11 +98,10 @@ def start(firstTry):
                 start(False)
                 break
 
-        for i in range(len(options)):
-            no = i + 1;
-            print(f"{no}. {options[i]}")
+        for i in range(len(options)): 
+            print(f"{i + 1}. {options[i]}")
 
-        select = input('Pilih bangun datar : ')
+        select = input('Pilih bangun ruang : ')
         if select != '' and select.isdigit():
             index = int(select) - 1
         else: break
@@ -81,30 +109,17 @@ def start(firstTry):
         if select != '' and index in range(len(options)):
             selected = options[index]
             firstTry = False
-
-            if selected == 'Kubus':
-                result = kubus()
-            elif selected == 'Limas Segiempat':
-                result = limas()
-            elif selected == 'Balok':
-                result = balok()
-            elif selected == 'Kerucut':
-                result = kerucut()
-                # print(result)
-            elif selected == 'Trapesium':
-                result = trapesium()
-            elif selected == 'Layang-layang':
-                result = layangLayang()
-            elif selected == 'Segitiga':
-                result = segitiga()
-            elif selected == 'Lingkaran':
-                result = lingkaran()
-            else:
-                result = None
-
+            result = execute(selected)
             if result:
-                print(f"\nVolume {selected.lower()} : {result['volume']} cm^3")
-                print(f"Luas Permukaan {selected.lower()} : {result['luas_permukaan']} cm^2")
+                for key, value in result.items():
+                    # powers = "3" if key == 'volume' else "2";
+                    powers = "2"
+                    ln = ''
+                    if key == 'volume':
+                        powers = "3"
+                        ln = '\n'
+
+                    print(f"{ln}{fixCase(key)} {selected.lower()} : {value} cm^" + powers)
         else:
             print('Pilihan tidak ditemukan')
 
