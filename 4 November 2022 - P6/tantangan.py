@@ -52,7 +52,7 @@ def jajarGenjang():
     return {'luas' : alas * tinggi, 'keliling' : (alas + miring) * 2}
 
 def trapesium():
-    a = floatOrExit(input('Masukkan sisi sejajar 1 (a) trapesium : '))
+    a = floatOrExit(input('\nMasukkan sisi sejajar 1 (a) trapesium : '))
     b = floatOrExit(input('Masukkan sisi sejajar 2 (b) trapesium : '))
     h = floatOrExit(input('Masukkan tinggi (h) trapesium : '))
     miring1 = floatOrExit(input('Masukkan panjang sisi miring 1 : '))
@@ -73,7 +73,7 @@ def belahKetupat():
     return {'luas' : luas, 'keliling' : keliling}
 
 def layangLayang():
-    diagonal1 = floatOrExit(input('Masukkan panjang diagonal 1 layang-layang : '))
+    diagonal1 = floatOrExit(input('\nMasukkan panjang diagonal 1 layang-layang : '))
     diagonal2 = floatOrExit(input('Masukkan panjang diagonal 2 layang-layang : '))
     rusuk1 = floatOrExit(input('Masukkan panjang rusuk 1 layang-layang : '))
     rusuk2 = floatOrExit(input('Masukkan panjang rusuk 2 layang-layang : '))
@@ -83,7 +83,7 @@ def layangLayang():
     return {'luas' : luas, 'keliling' : keliling}
 
 def segitiga():
-    alas = floatOrExit(input('Masukkan panjang alas segitiga : '))
+    alas = floatOrExit(input('\nMasukkan panjang alas segitiga : '))
     tinggi = floatOrExit(input('Masukkan tinggi segitiga : '))
     sisi1 = floatOrExit(input('Masukkan panjang sisi miring 1 segitiga : '))
     sisi2 = floatOrExit(input('Masukkan panjang sisi miring 2 segitiga : '))
@@ -91,14 +91,14 @@ def segitiga():
     return {'luas' : 1/2 * alas * tinggi, 'keliling' : alas + sisi1 + sisi2}
 
 def lingkaran():
-    r = floatOrExit(input('Masukkan panjang jari-jari lingkaran : '))
+    r = floatOrExit(input('\nMasukkan panjang jari-jari lingkaran : '))
     phi = 22 / 7
     return {'luas' : phi * r * r, 'keliling' : 2 * phi * r}
 
 def start(firstTry):
     while True:
         if (firstTry == False):
-            repeat = input('\nApakah anda ingin menghitung bangun datar yang lain? ? [ya, tidak] ')
+            repeat = input('\nApakah anda ingin menghitung bangun datar yang lain? [ya, tidak] ')
             if repeat.lower() in ('ya', 'tidak'):
                 if (repeat.lower() == 'tidak'): break
             else:
