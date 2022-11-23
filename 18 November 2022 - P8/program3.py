@@ -1,32 +1,24 @@
-def isInt(num):
-	try:
-		int(num);
-		return True;
-	except Exception:
-		return False
-
 def intInput(message):
-	number = input(message)
-	if (isInt(number)):
-		return int(number)
-	else:
-		print('Input harus berupa angka!')
-		return intInput(message)
+    number = input(message)
+    if (number.isnumeric()):
+        return int(number)
+    else:
+        print('Input harus berupa angka!')
+        return intInput(message)
 
 
 age = intInput('Masukkan umur : ')
 if (age > 60):
-	status = 'Lansia'
+    status = 'Lansia'
 elif (age > 30):
-	status = 'Dewasa'
+    status = 'Dewasa'
 elif (age > 17):
-	status = 'Muda'
+    status = 'Muda'
 elif (age > 12):
-	status = 'Remaja'
+    status = 'Remaja'
 elif (age > 5):
-	status = 'Anak-anak'
+    status = 'Anak-anak'
 else:
-	status = 'Balita'
+    status = 'Balita'
 
 print(f'Usia {age} adalah {status}')
-
