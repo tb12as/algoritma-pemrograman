@@ -30,3 +30,4 @@ while pemain is False:
     # Set pemain ke False lagi supaya terjadinya looping yang berulang
     pemain = False
     komputer = Glist[randint(0, 2)]
+    
