@@ -6,4 +6,4 @@ def reverse_word(string):
 
 print(reverse_word('Aku ganteng banget'))
 print(reverse_word('Emang bener!'))
-print(reverse_word('Saya sudah bias membuat fungsi dengan python'))
+print(reverse_word('Saya sudah bisa membuat fungsi dengan python'))

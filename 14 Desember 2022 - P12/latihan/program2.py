@@ -11,4 +11,6 @@ def countCase(str):
     }
 
 
-print(countCase('Ani dan Budi belajar di rumah Joko, di Desa Suka Maju'))
+result = countCase('Ani dan Budi belajar di rumah Joko, di Desa Suka Maju')
+print(f'Jumlah karakter uppercase pada string : {result["upper_case"]}')
+print(f'Jumlah karakter lowercase pada string : {result["lower_case"]}')
