@@ -2,5 +2,5 @@ original_string = 'Pada hari Senin, Saya Belajar Mata Kuliah Algoritma Pemrogram
 
 #print(original_string.split(' '))
 result = [val for val in original_string.split(' ') if len(val.replace(',', '')) > 5]
-print('Kata yang lebih dari 4 huruf adalah :', result)
+print('Kata yang lebih dari 5 huruf adalah :', result)
 

@@ -1,14 +1,25 @@
-alphabet = list('abcdefghijklmnopqrstuvwxz')
-text = 'ugtcpi mqvc kvw dguqm'
-depth = 2
+import string
+letters = list(string.ascii_lowercase)
 
-result = ''
-for t in list(text):
-    if t != ' ':
-        index = alphabet.index(t)
-        new_index = (index - depth)
-        result += alphabet[index - depth]
-    else:
-        result += ' '
+def caesar(string, shift):
+    new_letters = letters[shift % 26:] + letters[0:shift % 26]
+    result = ''
+    for v in string:
+        if v.lower() in letters:
+            letter = new_letters[letters.index(v.lower())]
+            if v.isupper(): letter = letter.upper()
+            result += letter
+        else:
+            result += v
 
-print(result)
+    return result
+
+
+def decrypt(string, shift):
+    return caesar(string, 26 - shift)
+
+if __name__ == '__main__':
+    print(caesar('serang kota itu besok', 2))
+    print(decrypt('ugtcpi mqvc kvw dguqm',2))
+
+

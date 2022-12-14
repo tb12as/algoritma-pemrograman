@@ -19,7 +19,7 @@ def decrypt(string, shift):
     return caesar(string, 26 - shift)
 
 if __name__ == '__main__':
-    print(caesar('sERANG kota itu besok', 2))
-    print(decrypt('ugtCPi mqvc kvw dguqm',2))
+    print(caesar('serang kota itu besok', 2))
+    print(decrypt('ugtcpi mqvc kvw dguqm',2))
 
 
