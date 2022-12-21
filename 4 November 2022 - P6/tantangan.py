@@ -9,12 +9,13 @@ options = [
     'Persegi',
     'Persegi panjang',
     'Jajar genjang',
-    'Trapesium', 
+    'Trapesium',
     'Belah ketupat',
     'Layang-layang',
     'Segitiga',
     'Lingkaran'
 ]
+
 
 def isFloat(n):
     try:
@@ -24,6 +25,7 @@ def isFloat(n):
     except ValueError:
         return False
 
+
 def floatOrExit(str):
     try:
         assert(isFloat(str)), "Error : Input harus berupa angka"
@@ -32,24 +34,29 @@ def floatOrExit(str):
         print(e)
         exit()
 
+
 def persegi():
     sisi = input('\nMasukkan sisi persegi : ')
     sisi = floatOrExit(sisi)
 
-    return {'luas' : sisi ** 2, 'keliling' : sisi * 4}
+    return {'luas': sisi ** 2, 'keliling': sisi * 4}
+
 
 def persegiPanjang():
     panjang = floatOrExit(input('\nMasukkan panjang persegi panjang : '))
     lebar = floatOrExit(input('Masukkan lebar persegi panjang : '))
 
-    return {'luas' : panjang * lebar, 'keliling' : (panjang + lebar) * 2}
+    return {'luas': panjang * lebar, 'keliling': (panjang + lebar) * 2}
+
 
 def jajarGenjang():
     alas = floatOrExit(input('\nMasukkan panjang alas jajar genjang : '))
     tinggi = floatOrExit(input('Masukkan tinggi jajar genjang : '))
-    miring = floatOrExit(input('Masukkan panjang sisi miring jajar genjang : '))
+    miring = floatOrExit(
+        input('Masukkan panjang sisi miring jajar genjang : '))
 
-    return {'luas' : alas * tinggi, 'keliling' : (alas + miring) * 2}
+    return {'luas': alas * tinggi, 'keliling': (alas + miring) * 2}
+
 
 def trapesium():
     a = floatOrExit(input('\nMasukkan sisi sejajar 1 (a) trapesium : '))
@@ -58,29 +65,36 @@ def trapesium():
     miring1 = floatOrExit(input('Masukkan panjang sisi miring 1 : '))
     miring2 = floatOrExit(input('Masukkan panjang sisi miring 2 : '))
 
-    luas = 1/2 * (a+b) * h
+    luas = 1 / 2 * (a + b) * h
     keliling = a + b + miring1 + miring2
 
-    return {'luas' : luas, 'keliling' : keliling}
+    return {'luas': luas, 'keliling': keliling}
+
 
 def belahKetupat():
     sisi = floatOrExit(input('\nMasukkan panjang sisi belah ketupat : '))
-    diagonal1 = floatOrExit(input('Masukkan panjang diagonal 1 belah ketupat : '))
-    diagonal2 = floatOrExit(input('Masukkan panjang diagonal 2 belah ketupat : '))
+    diagonal1 = floatOrExit(
+        input('Masukkan panjang diagonal 1 belah ketupat : '))
+    diagonal2 = floatOrExit(
+        input('Masukkan panjang diagonal 2 belah ketupat : '))
 
-    luas = 1/2 * diagonal1 * diagonal2
-    keliling = sisi * 4;
-    return {'luas' : luas, 'keliling' : keliling}
+    luas = 1 / 2 * diagonal1 * diagonal2
+    keliling = sisi * 4
+    return {'luas': luas, 'keliling': keliling}
+
 
 def layangLayang():
-    diagonal1 = floatOrExit(input('\nMasukkan panjang diagonal 1 layang-layang : '))
-    diagonal2 = floatOrExit(input('Masukkan panjang diagonal 2 layang-layang : '))
+    diagonal1 = floatOrExit(
+        input('\nMasukkan panjang diagonal 1 layang-layang : '))
+    diagonal2 = floatOrExit(
+        input('Masukkan panjang diagonal 2 layang-layang : '))
     rusuk1 = floatOrExit(input('Masukkan panjang rusuk 1 layang-layang : '))
     rusuk2 = floatOrExit(input('Masukkan panjang rusuk 2 layang-layang : '))
 
-    luas = 1/2 * diagonal1 * diagonal2
+    luas = 1 / 2 * diagonal1 * diagonal2
     keliling = (rusuk1 + rusuk2) * 2
-    return {'luas' : luas, 'keliling' : keliling}
+    return {'luas': luas, 'keliling': keliling}
+
 
 def segitiga():
     alas = floatOrExit(input('\nMasukkan panjang alas segitiga : '))
@@ -88,33 +102,38 @@ def segitiga():
     sisi1 = floatOrExit(input('Masukkan panjang sisi miring 1 segitiga : '))
     sisi2 = floatOrExit(input('Masukkan panjang sisi miring 2 segitiga : '))
 
-    return {'luas' : 1/2 * alas * tinggi, 'keliling' : alas + sisi1 + sisi2}
+    return {'luas': 1 / 2 * alas * tinggi, 'keliling': alas + sisi1 + sisi2}
+
 
 def lingkaran():
     r = floatOrExit(input('\nMasukkan panjang jari-jari lingkaran : '))
     phi = 22 / 7
-    return {'luas' : phi * r * r, 'keliling' : 2 * phi * r}
+    return {'luas': phi * r * r, 'keliling': 2 * phi * r}
+
 
 def start(firstTry):
     while True:
         if (firstTry == False):
-            repeat = input('\nApakah anda ingin menghitung bangun datar yang lain? [ya, tidak] ')
+            repeat = input(
+                '\nApakah anda ingin menghitung bangun datar yang lain? [ya, tidak] ')
             if repeat.lower() in ('ya', 'tidak'):
-                if (repeat.lower() == 'tidak'): break
+                if (repeat.lower() == 'tidak'):
+                    break
             else:
                 print("Pilihan hanya ya atau tidak")
                 start(False)
                 break
 
         for i in range(len(options)):
-            no = i + 1;
+            no = i + 1
             print(f"{no}. {options[i]}")
 
         select = input('Pilih bangun datar : ')
         if select != '' and select.isdigit():
             index = int(select) - 1
-        else: break
-            
+        else:
+            break
+
         if select != '' and index in range(len(options)):
             selected = options[index]
             firstTry = False
@@ -143,5 +162,6 @@ def start(firstTry):
                 print(f"Keliling {selected.lower()} : {result['keliling']} cm")
         else:
             print('Pilihan tidak ditemukan')
+
 
 start(True)
