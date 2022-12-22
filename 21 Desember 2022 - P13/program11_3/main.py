@@ -21,3 +21,8 @@ s2 = float_input("Masukkan panjang sisi 2  segitiga : ")
 s3 = float_input("Masukkan panjang sisi 3  segitiga : ")
 print("Luas segitiga: ", segitiga.luas(alas, tinggi))
 print("Keliling segitiga: ", segitiga.keliling(s1, s2, s3))
+
+
+# Todo
+# Hapus helper
+# Test contoh tes gunakan angka statis ae
