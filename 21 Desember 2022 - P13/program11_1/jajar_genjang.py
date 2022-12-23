@@ -2,5 +2,5 @@ def luas(alas, tinggi):
     return alas * tinggi
 
 
-def keliling(alas, s_miring):
-    return (alas + s_miring) * 2
+def keliling(a, b, c, d):
+    return a + b + c + d
