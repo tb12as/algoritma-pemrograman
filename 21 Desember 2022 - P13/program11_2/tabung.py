@@ -7,5 +7,5 @@ def volume(r, tb):
 
 def luas_permukaan(r, tb):
     l_alas = pi * r ** 2
-    l_selimit = 2 * pi * r * tb
-    return l_selimit + (2 * l_alas)
+    l_selimut = 2 * pi * r * tb
+    return l_selimut + (2 * l_alas)
