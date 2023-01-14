@@ -12,4 +12,4 @@ def insertion_sort(arr):
     return arr
 
 
-print(insertion_sort([12, 38, 12, 2, 80, 3]))
+print('Final result', insertion_sort([12, 38, 12, 2, 80, 3]))

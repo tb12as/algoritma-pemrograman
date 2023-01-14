@@ -7,7 +7,8 @@ def selection_sort(arr):
             if arr[j] < arr[min_i]:
                 min_i = j
             count += 1
-            print(count, arr)
+            # format : arr, iteration, index yg dibandingkan, min
+            print(arr, f'{count:<2}  {i}-{j} {min_i:2}')
         arr[i], arr[min_i] = arr[min_i], arr[i]
 
     return arr
