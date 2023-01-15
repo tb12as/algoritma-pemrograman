@@ -8,8 +8,10 @@ def insertion_sort(arr):
             j -= 1
 
         arr[j + 1] = item
-        print(arr)
+        if __name__ == '__main__':
+            print(arr)
     return arr
 
 
-print('Final result', insertion_sort([12, 38, 12, 2, 80, 3]))
+if __name__ == '__main__':
+    print('Final result', insertion_sort([12, 38, 12, 2, 80, 3]))

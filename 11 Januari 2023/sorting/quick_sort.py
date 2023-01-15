@@ -10,5 +10,6 @@ def quick_sort(arr):
     return quick_sort(left) + middle + quick_sort(right)
 
 
-arr = [12, 38, 12, 2, 80, 3, 3, 3, 47, 46]
-print(quick_sort(arr))
+if __name__ == '__main__':
+    arr = [12, 38, 12, 2, 80, 3, 3, 3, 47, 46]
+    print(quick_sort(arr))
