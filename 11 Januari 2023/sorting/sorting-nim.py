@@ -28,7 +28,7 @@ nim = list(itertools.chain(*nim))
 # nim = insertion_sort(nim)
 nim = quick_sort(nim)
 
-# chunk to 5 and print per chunk
+# chunk to 5 and print the elements from each chunk at the same i index.
 # full screen terminal / cmd are recommended
 chunk_length = 5
 chunked_nim = np.array_split(nim, chunk_length)
